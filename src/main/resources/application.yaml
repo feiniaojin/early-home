@@ -1,0 +1,10 @@
+earlyhome:
+  datasource:
+    username:
+    password:
+  basic:
+    package:
+  generate:
+    - table:
+      entity:
+      checkcolumn:
