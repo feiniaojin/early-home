@@ -1,0 +1,20 @@
+{
+  "basePackage": "cn.gingo.earlyhome",
+  "entities": [
+    {
+      "controllerPath": "/item",
+      "tableName": "t_item",
+      "entityName": "Item",
+      "idStrategy": "0",
+      "idGenerator": "cn.gingo.eden.component.DistributedIdGenerator"
+    },
+    {
+      "controllerPath": "/member",
+      "tableName": "t_member",
+      "entityName": "Member",
+      "idStrategy": "0",
+      "idGenerator": "cn.gingo.eden.component.DistributedIdGenerator"
+    }
+  ]
+}
+

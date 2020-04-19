@@ -21,7 +21,7 @@
 
         <!-- 数据库连接配置 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://rm-2ze50yc5l25396co1ao.mysql.rds.aliyuncs.com:3306/xyz_cbec"
+                        connectionURL="jdbc:mysql://cdb-q24v8rre.bj.tencentcdb.com:10047/db_0"
                         userId="root" password="Gingo@8795"/>
 
         <javaTypeResolver>
@@ -29,18 +29,23 @@
         </javaTypeResolver>
 
         <!-- domain配置 -->
-        <javaModelGenerator targetPackage="cn.gingo.emall.console.entity" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="cn.gingo.earlyhome.entity" targetProject="src/main/java"/>
         <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!-- 生成DAO的类文件以及配置文件 trans_smlpay_ex-->
-        <javaClientGenerator targetPackage="cn.gingo.emall.console.dao" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="cn.gingo.earlyhome.dao" targetProject="src/main/java"
                              type="XMLMAPPER">
             <property name="enableSubPackages" value="false"></property>
         </javaClientGenerator>
 
-        <table tableName="p_category_filter" domainObjectName="CategoryFilter">
+        <table tableName="t_member" domainObjectName="Member">
+            <property name="delimitIdentifiers" value="true"/>
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+
+        <table tableName="t_item" domainObjectName="Item">
             <property name="delimitIdentifiers" value="true"/>
             <property name="useActualColumnNames" value="false"/>
         </table>
