@@ -6,7 +6,6 @@
     <modules>
 <!--        <module>dao-generator</module>-->
 		<module>mybatis-plugins</module>
-		<module>biz-generator-statemachine</module>
         <module>biz-generator-basic</module>
     </modules>
     <parent>
