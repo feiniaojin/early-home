@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by eden.
+ * Created by yujie.
  */
 
 @RestController
@@ -41,14 +41,11 @@ public class ${entity}Controller {
         if(log.isDebugEnabled()){
             log.debug("${entityDTO}.Query=[{}]",gson.toJson(query));
         }
-
        ${entityDTO}.Page page= ${entity}Service.pageList(query);
-
        if(log.isDebugEnabled()){
             log.debug("${entityDTO}.Page=[{}]",gson.toJson(page));
         }
-
-       return   page;
+       return page;
     }
 
     @GetMapping("/{id}")
@@ -57,13 +54,10 @@ public class ${entity}Controller {
         if(log.isDebugEnabled()){
             log.debug("Getting ${entity} detail,id=[{}]",id);
         }
-
        ${entityDTO}.Info info = ${entity}Service.getById(id);
-
         if(log.isDebugEnabled()){
             log.debug("${entity} detail=[{}]",gson.toJson(info));
         }
-
        return Collections.singletonMap("info",info);
     }
 

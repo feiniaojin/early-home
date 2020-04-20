@@ -6,7 +6,7 @@ import ${basePackage}.dto.${entityDTO};
 import java.util.List;
 
 /**
- * Created by eden.
+ * Created by yujie.
  */
 public interface ${entity}Service {
 

@@ -21,7 +21,7 @@ import org.apache.commons.lang3.StringUtils;
 /**
 \l;     <
 \g;     >
- * Created by eden.
+ * Created by yujie.
  */
 @Service
 @Slf4j
@@ -38,11 +38,8 @@ public class ${entity}ServiceImpl implements ${entity}Service {
     public ${entityDTO}.Page pageList(${entityDTO}.Query query) {
 
         ${entityDTO}.Page page = new ${entityDTO}.Page();
-
         ${entity}Example example = new ${entity}Example();
-
         ${entity}Example.Criteria criteria = example.createCriteria();
-
         DateFormat dataFormat = null;
 
         <#list metaProperties as property>
@@ -205,7 +202,6 @@ public class ${entity}ServiceImpl implements ${entity}Service {
 
         ${entity}DTO.TableItem tableItem = new ${entity}DTO.TableItem();
         DateFormat dataFormat = null;
-
 
         <#list metaProperties as property>
         <#if property.columnClassName == "java.lang.Long">
