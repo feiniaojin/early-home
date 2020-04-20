@@ -29,13 +29,13 @@
         </javaTypeResolver>
 
         <!-- domain配置 -->
-        <javaModelGenerator targetPackage="cn.gingo.earlyhome.entity" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.example.demo.entity" targetProject="src/main/java"/>
         <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!-- 生成DAO的类文件以及配置文件 trans_smlpay_ex-->
-        <javaClientGenerator targetPackage="cn.gingo.earlyhome.dao" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.example.demo.dao" targetProject="src/main/java"
                              type="XMLMAPPER">
             <property name="enableSubPackages" value="false"></property>
         </javaClientGenerator>

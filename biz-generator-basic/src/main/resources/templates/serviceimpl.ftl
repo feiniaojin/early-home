@@ -9,11 +9,13 @@ import ${basePackage}.service.${entity}Service;
 import ${idGeneratorPackage};
 </#if>
 import lombok.extern.slf4j.Slf4j;
-import cn.gingo.framework.exception.CommonException;
+import java.math.BigDecimal;
+import cn.gingo.global.result.handler.exception.CommonException;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import org.apache.commons.lang3.StringUtils;
@@ -78,7 +80,7 @@ public class ${entity}ServiceImpl implements ${entity}Service {
         int count = ${entity?uncap_first}Mapper.countByExample(example);
         page.setCount(count);
         if(count==0){
-            page.setList(new ArrayList<#noparse><</#noparse><#noparse>></#noparse>(0));
+            page.setList(Collections.emptyList());
             return page;
         }
         //封装分页
@@ -116,12 +118,12 @@ public class ${entity}ServiceImpl implements ${entity}Service {
 
     @Override
     public void deleteById(String id) {
-        ${entity?uncap_first}Mapper.deleteByPrimaryKey(id);
+        ${entity?uncap_first}Mapper.deleteByPrimaryKey(Long.valueOf(id));
     }
 
     @Override
     public ${entityDTO}.Info getById(String id) {
-        ${entity} entity =${entity?uncap_first}Mapper.selectByPrimaryKey(id);
+        ${entity} entity =${entity?uncap_first}Mapper.selectByPrimaryKey(Long.valueOf(id));
         if(entity == null){
             throw new CommonException.NotFoundException();
         }
